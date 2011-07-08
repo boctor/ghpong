@@ -41,7 +41,7 @@ class GitHub
   end
 
   def self.closed_issues(message)
-    issues = message.scan(/(closes|fixes) (gh-|#)(\d+)/i).map{|m| m[2]}
+    issues = message.scan(/(fixes|fixed|fix|closes|close|closed) (gh-|#)(\d+)/i).map{|m| m[2]}
     return issues unless block_given?
     issues.each{ |issue| yield(issue) }
   end

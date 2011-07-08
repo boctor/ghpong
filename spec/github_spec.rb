@@ -22,6 +22,11 @@ describe GitHub do
       GitHub.closed_issues("fixes gh-34").should == ["34"]
       GitHub.closed_issues("fixes GH-34").should == ["34"]
       GitHub.closed_issues("fixes #34").should == ["34"]
+      GitHub.closed_issues("fixed #34").should == ["34"]
+      GitHub.closed_issues("fix #34").should == ["34"]
+      GitHub.closed_issues("closes #34").should == ["34"]
+      GitHub.closed_issues("close #34").should == ["34"]
+      GitHub.closed_issues("closed #34").should == ["34"]
     end
 
     it "should return nil when issue not closed" do
