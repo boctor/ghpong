@@ -2,7 +2,7 @@ require 'sinatra'
 require 'net/http'
 require 'net/https'
 require 'json'
-require 'github'
+require './github'
 
 set :ghuser, ENV['GH_USER']
 set :ghpass, ENV['GH_PASSWORD']
